@@ -1,8 +1,9 @@
 import React from 'react';
 import Button from './button';
+
 export default class ButtonPanel extends React.Component{
-  renderButton(name){
-    return (<Button name={ name } />);
+  renderButton(name) {
+    return (<Button name={name} />);
   }
 
   render(){

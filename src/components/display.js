@@ -6,7 +6,7 @@ const Display = (props) => {
   return (
     <div>{ result }</div>
   );
-}
+};
  
 Display.propTypes = {
   result: PropTypes.string,
