@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const displayStyle = {
+  backgroundColor: 'gray',
+  display: 'flex',
+  height: 100,
+  color: 'white',
+  fontWeight: 'bold',
+  padding: 10,
+  align: 'right'
+}
+
 const Display = (props) => {
   const { result } = props;
   return (
-    <div>{ result }</div>
+    <div style={ displayStyle }>{ result }</div>
   );
 };
 
