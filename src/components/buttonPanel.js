@@ -6,7 +6,7 @@ const renderButton = (name, wide = false) => (<Button name={name} wide={wide} />
 const panelRowStyle = {
   display: 'flex',
   height: 100,
-}
+};
 
 const ButtonPanel = () => (
   <div>
@@ -16,7 +16,7 @@ const ButtonPanel = () => (
       { renderButton('AC') }
       { renderButton('/') }
     </div>
-    <div style = {panelRowStyle}>
+    <div style={panelRowStyle}>
       { renderButton('7') }
       { renderButton('8') }
       { renderButton('9') }
@@ -28,7 +28,7 @@ const ButtonPanel = () => (
       { renderButton('6') }
       { renderButton('-') }
     </div>
-    <div style = {panelRowStyle}>
+    <div style={panelRowStyle}>
       { renderButton('0', true) }
       { renderButton('.') }
       { renderButton('=') }
