@@ -1,16 +1,16 @@
 import React from 'react';
 import Button from './button';
 
-const renderButton = (name,wide = false) => (<Button name={name} wide={wide} />);
+const renderButton = (name, wide = false) => (<Button name={name} wide={wide} />);
 
 const panelRowStyle = {
   display: 'flex',
-  height: 100
+  height: 100,
 }
 
 const ButtonPanel = () => (
   <div>
-    <div style = {panelRowStyle}>
+    <div style={panelRowStyle}>
       { renderButton('%') }
       { renderButton('+/-') }
       { renderButton('AC') }
@@ -22,7 +22,7 @@ const ButtonPanel = () => (
       { renderButton('9') }
       { renderButton('X') }
     </div>
-    <div style = {panelRowStyle}>
+    <div style={panelRowStyle}>
       { renderButton('4') }
       { renderButton('5') }
       { renderButton('6') }

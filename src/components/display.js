@@ -8,13 +8,13 @@ const displayStyle = {
   color: 'white',
   fontWeight: 'bold',
   padding: 10,
-  align: 'right'
-}
+  align: 'right',
+};
 
 const Display = (props) => {
   const { result } = props;
   return (
-    <div style={ displayStyle }>{ result }</div>
+    <div style={displayStyle}>{ result }</div>
   );
 };
 

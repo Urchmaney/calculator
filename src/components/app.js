@@ -4,8 +4,8 @@ import ButtonPanel from './buttonPanel';
 
 const appStyle = {
   display: 'flex',
-  flexDirection: 'column'
-}
+  flexDirection: 'column',
+};
 
 const App = () => (
   <div style={appStyle}>
