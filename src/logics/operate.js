@@ -1,4 +1,4 @@
-import Big from 'big.js';
+const Big = require('big.js');
 
 const operate = (numberOne, numberTwo, operation) => {
   let result = 0;
@@ -18,7 +18,7 @@ const operate = (numberOne, numberTwo, operation) => {
     case '%':
       result = Big(numberOne) % Big(numberTwo);
       break;
-    default :
+    default:
   }
   return result;
 };
