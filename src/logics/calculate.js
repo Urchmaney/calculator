@@ -1,21 +1,22 @@
 import operate from './operate';
 
 const calculate = (calObj, btnName) => {
-	switch(btnName) {
-		case '+/-' :
-			calObj.total = (calObj.total * -1);
-      calObj.next = (calObj.next * -1);
+  switch (btnName) {
+    case '+/-':
+      calObj.total *= -1;
+      calObj.next *= -1;
       break;
-		case '+' :
-		case '-' :
-		case '*' :
-		case '/' :
-		case '%' :
-      calObj.total = operate(calObj.total,calObj.next,btnName);
+    case '+':
+    case '-':
+    case '*':
+    case '/':
+    case '%':
+      const total = operate(calObj.total,calObj.next,btnName);
+      calObj.total = total;
       break;
-		default :
-	};
-	return calObj;
-}
+    default :
+  }
+  return calObj;
+};
 
 export default calculate;
