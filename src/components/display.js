@@ -1,10 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const displayStyle = {
+  backgroundColor: 'gray',
+  display: 'flex',
+  height: 100,
+  color: 'white',
+  fontWeight: 'bold',
+  fontSize: 40,
+  padding: 10,
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+};
+
 const Display = (props) => {
   const { result } = props;
   return (
-    <div>{ result }</div>
+    <p style={displayStyle}>{ result }</p>
   );
 };
 
