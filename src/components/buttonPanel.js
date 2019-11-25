@@ -1,8 +1,9 @@
 import React from 'react';
 import Button from './button';
 
-const renderButton = (name, color, wide = false) => 
-  (<Button name={name} wide={wide} color={color} />);
+const renderButton = (name, color, wide = false) =>(
+  <Button name={name} wide={wide} color={color} />
+);
 
 const panelRowStyle = {
   display: 'flex',
