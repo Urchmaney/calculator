@@ -5,17 +5,22 @@ const operate = (numberOne, numberTwo, operation) => {
   switch (operation) {
     case '+':
       result = Big(numberOne) + Big(numberTwo);
-    case '-' :
+      break;
+    case '-':
       result = Big(numberOne) - Big(numberTwo);
-    case '*' :
+      break;
+    case '*':
       result = Big(numberOne) * Big(numberTwo);
-    case '/' :
+      break;
+    case '/':
       result = Big(numberOne) / Big(numberTwo);
-    case '%' :
+      break;
+    case '%':
       result = Big(numberOne) % Big(numberTwo);
+      break;
     default :
-  };
+  }
   return result;
-}
+};
 
 export default operate;
