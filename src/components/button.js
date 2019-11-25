@@ -6,8 +6,10 @@ const buttonStyle = (color, wide) => {
   return {
     width: wide ? `${standard * 2}%` : `${standard}%`,
     textAlign: 'center',
-    border: '1px solid gray',
+    border: '1px solid white',
     backgroundColor: color,
+    fontWeight: 'bold',
+    fontSize: 30,
   };
 };
 

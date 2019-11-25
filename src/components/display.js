@@ -7,14 +7,16 @@ const displayStyle = {
   height: 100,
   color: 'white',
   fontWeight: 'bold',
+  fontSize: 40,
   padding: 10,
-  align: 'right',
+  justifyContent: 'flex-end',
+  alignItems: 'center',
 };
 
 const Display = (props) => {
   const { result } = props;
   return (
-    <div style={displayStyle}>{ result }</div>
+    <p style={displayStyle}>{ result }</p>
   );
 };
 
