@@ -4,10 +4,9 @@ const ops = ['+', '-', 'X', '/', '%'];
 
 const calculate = (calObj, btnName) => {
   const obj = calObj;
-  if(ops.includes(obj.operation)){
+  if (ops.includes(obj.operation)) {
     obj.total = operate(obj.total, obj.next, obj.operation);
-  }
-  else{
+  } else {
     obj.total *= -1;
   }
   obj.next = null;

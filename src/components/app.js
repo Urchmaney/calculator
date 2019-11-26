@@ -11,8 +11,8 @@ const appStyle = {
   paddingTop: 20,
 };
 
-export default class App extends React.Component{
-  constructor(props){
+export default class App extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
       total: null,
@@ -22,14 +22,6 @@ export default class App extends React.Component{
     this.handleClick = this.handleClick.bind(this);
   }
 
-  clear(){
-    this.setState({
-      total: null,
-      next: null,
-      operation: null,
-    });
-  }
-  
   handleClick(buttonName) {
     if(this.isEqualTo(buttonName)){
       this.setState(calculate(this.state,buttonName));
@@ -69,6 +61,14 @@ export default class App extends React.Component{
       total: this.state.total,
       operation: this.state.operation,
       next: this.state.next ? this.state.next + next : next,
+    });
+  }
+
+  clear() {
+    this.setState({
+      total: null,
+      next: null,
+      operation: null,
     });
   }
 

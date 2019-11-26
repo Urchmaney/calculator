@@ -14,16 +14,17 @@ const buttonStyle = (color, wide) => {
 };
 
 export default class Button extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.buttonClicked = this.buttonClicked.bind(this);
   }
 
   handleClick(buttonName) {
-    this.props.onClick(buttonName);
+    const { onClick } = this.props;
+    onClick(buttonName);
   }
 
-  buttonClicked(event){
+  buttonClicked(event) {
     this.handleClick(event.target.innerHTML);
   }
 
@@ -37,6 +38,7 @@ Button.propTypes = {
   name: PropTypes.string.isRequired,
   color: PropTypes.string,
   wide: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {

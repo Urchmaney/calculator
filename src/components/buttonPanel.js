@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './button';
+import PropTypes from 'prop-types';
 
 const renderButton = (onclick, name, color, wide = false) => (
   <Button name={name} wide={wide} color={color} onClick={onclick} />
@@ -13,13 +14,14 @@ const panelRowStyle = {
 const bColor = '#e0e0e0';
 
 export default class ButtonPanel extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(buttonName) {
-    this.props.onClick(buttonName);
+    const { onClick } = this.props;
+    onClick(buttonName);
   }
 
   render() {
@@ -58,3 +60,7 @@ export default class ButtonPanel extends React.Component {
     );
   }
 }
+
+ButtonPanel.propTypes = {
+  onClick: PropTypes.func,
+};
