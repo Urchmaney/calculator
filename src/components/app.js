@@ -11,6 +11,8 @@ const appStyle = {
   paddingTop: 20,
 };
 
+const isOperation = op => ['+','-','/','X','%','+/-'].includes(op);
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -50,15 +52,16 @@ export default class App extends React.Component {
   }
 
   handleClick(buttonName) {
+    const { total, operation } = this.state;
     if (this.isEqualTo(buttonName)) {
-      this.setState(calculate(this.state,buttonName));
+      this.setState(prev => calculate(prev, buttonName));
     } else if (this.isClear(buttonName)) {
       this.clear();
-    } else if (!this.state.operation && !this.isOperation(buttonName)) {
+    } else if (!operation && !isOperation(buttonName)) {
       this.setTotal(buttonName);
-    } else if (this.isOperation(buttonName) && this.state.total && !this.state.operation) {
+    } else if (isOperation(buttonName) && total && !operation) {
       this.setOperation(buttonName);
-    } else if (!this.isOperation(buttonName) && this.state.operation) {
+    } else if (!isOperation(buttonName) && operation) {
       this.setNext(buttonName);
     }
   }
@@ -69,10 +72,6 @@ export default class App extends React.Component {
       next: null,
       operation: null,
     });
-  }
-
-  isOperation(op) {
-    return ['+','-','/','X','%','+/-'].includes(op);
   }
 
   isEqualTo(op) {

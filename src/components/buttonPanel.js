@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from './button';
 import PropTypes from 'prop-types';
+import Button from './button';
 
 const renderButton = (onclick, name, color, wide = false) => (
   <Button name={name} wide={wide} color={color} onClick={onclick} />
@@ -62,5 +62,5 @@ export default class ButtonPanel extends React.Component {
 }
 
 ButtonPanel.propTypes = {
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
 };
