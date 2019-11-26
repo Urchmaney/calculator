@@ -11,7 +11,11 @@ const appStyle = {
   paddingTop: 20,
 };
 
-const isOperation = op => ['+','-','/','X','%','+/-'].includes(op);
+const isOperation = op => ['+', '-', '/', 'X', '%', '+/-'].includes(op);
+
+const isEqualTo = (op) => op === '=';
+
+const isClear = (op) => op === 'AC';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -53,9 +57,9 @@ export default class App extends React.Component {
 
   handleClick(buttonName) {
     const { total, operation } = this.state;
-    if (this.isEqualTo(buttonName)) {
+    if (isEqualTo(buttonName)) {
       this.setState(prev => calculate(prev, buttonName));
-    } else if (this.isClear(buttonName)) {
+    } else if (isClear(buttonName)) {
       this.clear();
     } else if (!operation && !isOperation(buttonName)) {
       this.setTotal(buttonName);
@@ -72,14 +76,6 @@ export default class App extends React.Component {
       next: null,
       operation: null,
     });
-  }
-
-  isEqualTo(op) {
-    return op === '=';
-  }
-
-  isClear(op) {
-    return op === 'AC';
   }
 
   render() {
