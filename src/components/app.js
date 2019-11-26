@@ -22,24 +22,6 @@ export default class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(buttonName) {
-    if(this.isEqualTo(buttonName)){
-      this.setState(calculate(this.state,buttonName));
-    }
-    else if(this.isClear(buttonName)){
-      this.clear();
-    }
-    else if(!this.state.operation && !this.isOperation(buttonName)){
-      this.setTotal(buttonName);
-    }
-    else if(this.isOperation(buttonName) && this.state.total && !this.state.operation){
-      this.setOperation(buttonName);
-    }
-    else if(!this.isOperation(buttonName) && this.state.operation){
-      this.setNext(buttonName);
-    }
-  }
-
   setTotal(total){
     this.setState({
       total: this.state.total ? this.state.total + total : total,
@@ -62,6 +44,24 @@ export default class App extends React.Component {
       operation: this.state.operation,
       next: this.state.next ? this.state.next + next : next,
     });
+  }
+
+  handleClick(buttonName) {
+    if(this.isEqualTo(buttonName)){
+      this.setState(calculate(this.state,buttonName));
+    }
+    else if(this.isClear(buttonName)){
+      this.clear();
+    }
+    else if(!this.state.operation && !this.isOperation(buttonName)){
+      this.setTotal(buttonName);
+    }
+    else if(this.isOperation(buttonName) && this.state.total && !this.state.operation){
+      this.setOperation(buttonName);
+    }
+    else if(!this.isOperation(buttonName) && this.state.operation){
+      this.setNext(buttonName);
+    }
   }
 
   clear() {
