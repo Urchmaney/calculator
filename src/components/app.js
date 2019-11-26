@@ -13,9 +13,9 @@ const appStyle = {
 
 const isOperation = op => ['+', '-', '/', 'X', '%', '+/-'].includes(op);
 
-const isEqualTo = (op) => op === '=';
+const isEqualTo = op => op === '=';
 
-const isClear = (op) => op === 'AC';
+const isClear = op => op === 'AC';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -79,13 +79,14 @@ export default class App extends React.Component {
   }
 
   render() {
+    const { total, operation, next } = this.state;
     let expression = '';
-    expression += this.state.total || '0';
-    expression += this.state.operation || '';
-    expression += this.state.next || '';
+    expression += total || '0';
+    expression += operation || '';
+    expression += next || '';
     return (
       <div style={appStyle}>
-        <Display result={expression}/>
+        <Display result={expression} />
         <ButtonPanel onClick={this.handleClick} />
       </div>
     );
