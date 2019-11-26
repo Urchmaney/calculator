@@ -13,10 +13,25 @@ const buttonStyle = (color, wide) => {
   };
 };
 
-const Button = (props) => {
-  const { name, color, wide } = props;
-  return (<button type="button" style={buttonStyle(color, wide)}>{ name }</button>);
-};
+export default class Button extends React.Component {
+  constructor(props){
+    super(props);
+    this.buttonClicked = this.buttonClicked.bind(this);
+  }
+
+  handleClick(buttonName) {
+    this.props.onClick(buttonName);
+  }
+
+  buttonClicked(event){
+    this.handleClick(event.target.innerHTML);
+  }
+
+  render() {
+    const { name, color, wide } = this.props;
+    return (<button type="button" onClick={this.buttonClicked} style={buttonStyle(color, wide)}>{ name }</button>);
+  }
+}
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
@@ -28,5 +43,3 @@ Button.defaultProps = {
   color: 'orange',
   wide: false,
 };
-
-export default Button;
