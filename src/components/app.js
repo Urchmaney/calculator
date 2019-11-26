@@ -1,6 +1,8 @@
 import React from 'react';
 import Display from './display';
 import ButtonPanel from './buttonPanel';
+// eslint-disable-next-line
+import calculate from '../logics/calculate';
 
 const appStyle = {
   display: 'flex',
