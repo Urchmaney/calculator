@@ -22,44 +22,43 @@ export default class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  setTotal(total){
+  setTotal(newTotal) {
+    const { total } = this.state;
     this.setState({
-      total: this.state.total ? this.state.total + total : total,
+      total: total ? total + newTotal : newTotal,
       next: null,
       operation: null,
     });
   }
 
-  setOperation(operation){
+  setOperation(operation) {
+    const { total } = this.state;
     this.setState({
-      total: this.state.total,
-      operation: operation,
+      total,
+      operation,
       next: null,
     });
   }
 
-  setNext(next){
+  setNext(newNext) {
+    const { total, operation, next } = this.state;
     this.setState({
-      total: this.state.total,
-      operation: this.state.operation,
-      next: this.state.next ? this.state.next + next : next,
+      total,
+      operation,
+      next: next ? next + newNext : newNext,
     });
   }
 
   handleClick(buttonName) {
-    if(this.isEqualTo(buttonName)){
+    if (this.isEqualTo(buttonName)) {
       this.setState(calculate(this.state,buttonName));
-    }
-    else if(this.isClear(buttonName)){
+    } else if (this.isClear(buttonName)) {
       this.clear();
-    }
-    else if(!this.state.operation && !this.isOperation(buttonName)){
+    } else if (!this.state.operation && !this.isOperation(buttonName)) {
       this.setTotal(buttonName);
-    }
-    else if(this.isOperation(buttonName) && this.state.total && !this.state.operation){
+    } else if (this.isOperation(buttonName) && this.state.total && !this.state.operation) {
       this.setOperation(buttonName);
-    }
-    else if(!this.isOperation(buttonName) && this.state.operation){
+    } else if (!this.isOperation(buttonName) && this.state.operation) {
       this.setNext(buttonName);
     }
   }
@@ -80,7 +79,7 @@ export default class App extends React.Component {
     return op === '=';
   }
 
-  isClear(op){
+  isClear(op) {
     return op === 'AC';
   }
 
@@ -97,4 +96,3 @@ export default class App extends React.Component {
     );
   }
 }
-
