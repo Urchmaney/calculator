@@ -6,7 +6,7 @@ const calculate = (calObj, btnName) => {
   const obj = calObj;
   if (ops.includes(obj.operation)) {
     obj.total = operate(obj.total, obj.next, obj.operation);
-  } else {
+  } else if (obj.operation === '+/-') {
     obj.total *= -1;
   }
   obj.next = null;
