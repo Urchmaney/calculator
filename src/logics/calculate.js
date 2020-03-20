@@ -2,7 +2,7 @@ import operate from './operate';
 
 const ops = ['+', '-', 'X', '/', '%'];
 
-const calculate = (calObj, btnName) => {
+const calculate = (calObj) => {
   const obj = calObj;
   if (ops.includes(obj.operation)) {
     obj.total = operate(obj.total, obj.next, obj.operation);

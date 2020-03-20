@@ -8,8 +8,7 @@ const operations = {
   '%': (numberOne, numberTwo) => Big(Number(numberOne)) % Big(Number(numberTwo)),
 };
 
-const operate = (numberOne, numberTwo, operation) => {
-  return operations[operation](numberOne, numberTwo) || '0';
-};
+const operate = (numberOne, numberTwo, operation) => operations[operation](numberOne, numberTwo) || '0';
+
 
 export default operate;
