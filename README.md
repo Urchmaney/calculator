@@ -2,7 +2,8 @@
 A simple calculator application created using react framework.
 [Live Link.](https://calculator-inc-app.herokuapp.com)
 
-Used:
+<a href="https://calculator-inc-app.herokuapp.com"><img src="public/screen-shot.png" width="500" /> </a>
+## Technologies
 - Javascript
 - React Framework
 - Webpack
