@@ -20,4 +20,3 @@ A simple calculator application created using react framework.
 - Github: [@urchmaney](https://github.com/Urchmaney)
 - Linkedin: [@urchmaney](https://www.linkedin.com/in/kingsley-uche/)
 - Twitter: [@urchmaney](https://twitter.com/kingsleyunegbu)
-- Email: KIngsobino@gmail.com.
